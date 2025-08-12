@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mohamed Maher — Software Engineer Portfolio</title>
+  <meta name="description" content="Mohamed Maher — Turning Code Into Experience | Software Engineer Portfolio" />
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind custom config
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+            accent: '#7c3aed'
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'serif'],
+            body: ['Inter', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Custom CSS: glassmorphism, cursor, transitions, subtle parallax */
+    :root{--bg:#0b1020;--card:rgba(255,255,255,0.06);--glass:rgba(255,255,255,0.04);--accent:linear-gradient(90deg,#7c3aed,#3b82f6)}
+    [data-theme="light"]{--bg:#f7fbff;--card:rgba(11,17,28,0.04);--glass:rgba(255,255,255,0.6)}
+    html,body{height:100%}
+    html {
+  scroll-behavior: smooth;
+}
+
+    body{background:radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent), radial-gradient(1000px 500px at 90% 90%, rgba(59,130,246,0.06), transparent);background-color:var(--bg);font-family:Inter,ui-sans-serif,system-ui, -apple-system, 'Segoe UI', Roboto}
+    /* Glass cards */
+    .glass{backdrop-filter: blur(8px);background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.06)}
+    /* Hero shapes */
+    .float-shape{position:absolute;filter:blur(30px);opacity:0.8;mix-blend-mode:screen}
+    /* Custom cursor */
+    .cursor-follower{position:fixed;pointer-events:none;width:22px;height:22px;border-radius:999px;transform:translate(-50%,-50%);z-index:9999;transition:width .18s ease,height .18s ease,background-color .18s ease,opacity .18s}
+    .cursor-dot{position:fixed;pointer-events:none;width:6px;height:6px;border-radius:999px;transform:translate(-50%,-50%);z-index:9999}
+    /* Section divider SVG styling */
+    .divider{display:block;width:100%}
+    /* Modal backdrop */
+    .modal-backdrop{background:rgba(2,6,23,0.6)}
+    /* Animated scroll indicator */
+    .scroll-indicator{width:28px;height:46px;border-radius:16px;border:2px solid rgba(255,255,255,0.3);display:flex;align-items:flex-start;justify-content:center;padding:6px}
+    .scroll-bubble{width:6px;height:6px;border-radius:50%;background:linear-gradient(90deg,#7c3aed,#3b82f6);animation:scroll 1.6s infinite}
+    @keyframes scroll{0%{transform:translateY(0)}50%{transform:translateY(16px);opacity:.8}100%{transform:translateY(0)}}
+    /* progress bar */
+    .progress-base{height:8px;background:rgba(255,255,255,0.08);border-radius:999px}
+    .progress-fill{height:8px;border-radius:999px}
+  </style>
+</head>
+<body class="text-slate-200 antialiased relative overflow-x-hidden" data-theme="dark">
+  <!-- custom cursor elements -->
+
+
+  <!-- Floating shapes -->
+  <svg class="float-shape" width="420" height="420" viewBox="0 0 420 420" style="left:-80px;top:-60px;">
+    <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs>
+    <circle cx="210" cy="210" r="160" fill="url(#g1)" opacity="0.12"></circle>
+  </svg>
+  <svg class="float-shape" width="320" height="320" viewBox="0 0 320 320" style="right:-60px;bottom:-80px;">
+    <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+    <rect x="0" y="0" width="320" height="320" rx="80" fill="url(#g2)" opacity="0.08"></rect>
+  </svg>
+
+  <!-- NAV -->
+<nav class="fixed w-full z-40 top-6 left-0 px-6">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="#hero" class="font-heading text-white text-xl tracking-tight drop-shadow-md">
+    
+    </a>
+
+    <div class="flex items-center gap-6">
+      <a href="#about" class="text-slate-200 hover:text-white transition">About</a>
+      <a href="#projects" class="text-slate-200 hover:text-white transition">Projects</a>
+      <a href="#certificates" class="text-slate-200 hover:text-white transition">Certificates</a>
+      <a href="#contact" class="text-slate-200 hover:text-white transition">Contact</a>
+      
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header id="hero" class="min-h-screen flex items-center justify-center relative pt-12">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-12">
+    <div class="w-full lg:w-6/12 text-center lg:text-left" data-aos="fade-up">
+      <p class="text-sm uppercase text-slate-300 mb-4">Software Engineer • Cyber Security • Computer Science</p>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl leading-tight text-white">WELCOME</h1>
+      <p class="mt-6 text-slate-300 max-w-xl">Hi, I'm <strong class="text-white">Mohamed Maher</strong> — I build polished, reliable software and craft secure, user-first experiences. I combine engineering rigor with creative design to ship products people love.</p>
+      <div class="mt-8 flex items-center gap-4 justify-center lg:justify-start">
+        <a href="#projects" class="inline-flex items-center gap-3 px-5 py-3 rounded-full shadow-lg glass hover:scale-[1.02] transition">View Projects →</a>
+        <a href="MOHAMEDMAHERCV.pdf" target="_blank" class="inline-flex items-center gap-3 px-5 py-3 rounded-full" style="background:var(--accent);color:white">My CV</a>
+      </div>
+      <div class="mt-10 flex items-center gap-6 justify-center lg:justify-start">
+        <!-- social icons -->
+        <a href="https://www.linkedin.com/in/mohamed-maher-2a7b05370" target="_blank" class="rounded-full p-3 glass" aria-label="LinkedIn">
+          <!-- LinkedIn SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.67-1.27 2.3-2.6 4.74-2.6C22.6 7.6 24 9.7 24 13.4V24h-5V14c0-2.4-.04-5.5-3.36-5.5-3.36 0-3.88 2.64-3.88 5.36V24H8V8z" /></svg>
+        </a>
+        <a href="https://github.com/MaherMox" target="_blank" class="rounded-full p-3 glass" aria-label="GitHub">
+          <!-- GitHub SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2.1C6.9 20.6 6.2 18.6 6.2 18.6c-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.3.1 2 1.3 2 1.3 1 1.8 2.6 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.4-5.5-6.3 0-1.4.5-2.5 1.3-3.4-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.3 1-.3 2-.4 3-.4s2 .1 3 .4c2.4-1.6 3.4-1.3 3.4-1.3.7 1.7.3 3 .1 3.3.8.9 1.3 2 1.3 3.4 0 4.9-2.8 5.9-5.5 6.2.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6C20.7 21.4 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z"/></svg>
+        </a>
+        <a href="mailto:mohamed.maher.linkedin@gmail.com" class="rounded-full p-3 glass" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  
+
+      <!-- Hero Card / portrait -->
+      <div class="w-full lg:w-5/12 flex items-center justify-center" data-aos="fade-left">
+        <div class="glass rounded-2xl p-6 max-w-md w-full relative overflow-hidden">
+          <div class="absolute -right-20 -top-16 opacity-40" style="transform:rotate(20deg)">
+            <svg width="220" height="220" viewBox="0 0 220 220"><defs><linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs><rect width="220" height="220" rx="34" fill="url(#pg)"/></svg>
+          </div>
+          <div class="relative z-10 flex flex-col items-center gap-4">
+            <!-- animated reveal profile -->
+             <div class="w-62 h-62 rounded-full overflow-hidden border-4 border-white/10 shadow-lg" style="background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))">
+             <img src="profile.png" 
+             alt="Mohamed Maher" 
+             class="w-full h-full object-cover">
+            </div>
+
+              <!-- SVG avatar placeholder -->
+              
+            <h3 class="text-xl font-semibold">Mohamed Maher</h3>
+             <p class="text-slate-300 text-sm text-center">
+               Software Engineer · Cyber Security · Computer Science
+             </p>
+
+
+
+    <!-- scroll indicator -->
+ 
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="pt-24 pb-10">
+    <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
+      <div class="glass p-8 rounded-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          <div class="col-span-1">
+            <h2 class="font-heading text-2xl">About Me</h2>
+            <p class="mt-4 text-slate-300">I am a Software Engineer with experience in frontend development, cybersecurity principles and full-stack projects. I focus on building secure, maintainable systems and beautiful user interfaces.</p>
+            <div class="mt-6 flex gap-3">
+              <a href="#contact" class="px-4 py-2 rounded-full text-sm glass">Contact</a>
+              <a href="#projects" class="px-4 py-2 rounded-full text-sm" style="background:var(--accent);color:white">My Work</a>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <!-- skill icons -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div class="p-4 glass rounded-xl text-center">
+                <div class="mb-3 text-2xl">⚛️</div>
+                <div class="font-medium">React</div>
+                <div class="text-xs text-slate-300 mt-2">Modern SPA development</div>
+              </div>
+              <div class="p-4 glass rounded-xl text-center">
+                <div class="mb-3 text-2xl">🔐</div>
+                <div class="font-medium">Security</div>
+                <div class="text-xs text-slate-300 mt-2">Secure coding & networks</div>
+              </div>
+              <div class="p-4 glass rounded-xl text-center">
+                <div class="mb-3 text-2xl">🐍</div>
+                <div class="font-medium">Python</div>
+                <div class="text-xs text-slate-300 mt-2">Backend & automation</div>
+              </div>
+              <div class="p-4 glass rounded-xl text-center">
+                <div class="mb-3 text-2xl">🧠</div>
+                <div class="font-medium">AI / Algorithms</div>
+                <div class="text-xs text-slate-300 mt-2">Search & optimization</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates 
+  <section id="certificates" class="pt-6 pb-6">
+    <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
+      <h2 class="font-heading text-2xl mb-6">Certificates</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass p-4 rounded-xl hover:scale-[1.02] transition cursor-pointer">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-white/5">🏅</div>
+            <div>
+              <div class="font-medium">Cisco Networking Basics</div>
+              <div class="text-xs text-slate-300">Fundamentals of networking (course)</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass p-4 rounded-xl hover:scale-[1.02] transition cursor-pointer">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-white/5">🎓</div>
+            <div>
+              <div class="font-medium">Front-End Development</div>
+              <div class="text-xs text-slate-300">Modern UI & responsive design</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass p-4 rounded-xl hover:scale-[1.02] transition cursor-pointer">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-white/5">🔒</div>
+            <div>
+              <div class="font-medium">Cyber Security Fundamentals</div>
+              <div class="text-xs text-slate-300">Security best practices</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- Divider SVG -->
+  <svg class="divider" viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.02)"/></svg>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="pt-8 pb-16">
+    <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
+      <div class="flex items-center justify-between">
+        <h2 class="font-heading text-2xl">Selected Projects</h2>
+        <div class="text-sm text-slate-300">Interactive grid — click for live demo / repo</div>
+      </div>
+
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1: N-Queens AI Solver -->
+        <article class="glass rounded-2xl p-4 relative group" tabindex="0">
+          <div class="h-40 rounded-lg overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
+            <!-- thumbnail SVG -->
+            <img src="project1.png" alt="N-Queens AI Solver" class="w-full h-full object-cover">
+
+          </div>
+          <div class="mt-4">
+            <h3 class="font-medium">N-Queens AI Solver</h3>
+            <p class="text-xs text-slate-300 mt-2">An AI-powered solver exploring search algorithms and heuristics.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <button class="px-3 py-2 rounded-full glass text-sm open-modal" data-title="N-Queens AI Solver" data-desc="Search & AI approaches to N-Queens using heuristic search and optimization." data-link="https://github.com/MaherMox/N-Queens-AI-Solver">Details</button>
+              <a href="https://github.com/MaherMox/N-Queens-AI-Solver" target="_blank" class="px-3 py-2 rounded-full text-sm" style="background:var(--accent);color:white">View Repo</a>
+            </div>
+          </div>
+        </article>
+
+<!-- Project 2: Freelance Platform -->
+<article class="glass rounded-2xl p-4 relative group" tabindex="0">
+  <!-- صورة المشروع -->
+  <div class="h-40 rounded-lg overflow-hidden">
+    <img src="project2.png" alt="Freelance Platform" class="w-full h-full object-cover">
+  </div>
+
+  <!-- نص المشروع والأزرار -->
+  <div class="mt-4">
+    <h3 class="font-medium">Freelance Platform</h3>
+    <p class="text-xs text-slate-300 mt-2">A full-stack platform built with Python for freelancers and clients.</p>
+    <div class="mt-4 flex items-center gap-3">
+      <button class="px-3 py-2 rounded-full glass text-sm open-modal"
+        data-title="Freelance Platform"
+        data-desc="A marketplace connecting freelancers with clients; built with Python back-end and responsive front-end."
+        data-link="https://github.com/MaherMox/freelance-platform-with-python">Details</button>
+      <a href="https://github.com/MaherMox/freelance-platform-with-python" target="_blank"
+        class="px-3 py-2 rounded-full text-sm"
+        style="background:var(--accent);color:white">View Repo</a>
+    </div>
+  </div>
+</article>
+
+
+<!-- Project 3: Tourist Site -->
+<article class="glass rounded-2xl p-4 relative group" tabindex="0">
+  <!-- صورة المشروع -->
+  <div class="h-40 rounded-lg overflow-hidden">
+    <img src="project3.png" alt="Tourist Site" class="w-full h-full object-cover">
+  </div>
+
+  <!-- نص المشروع والأزرار -->
+<div class="mt-4">
+  <h3 class="font-medium">Tourist Site</h3>
+  <p class="text-xs text-slate-300 mt-2">A responsive tourism website showcasing destinations and itineraries.</p>
+  <div class="mt-4 flex items-center gap-3">
+    <button class="px-3 py-2 rounded-full glass text-sm open-modal"
+      data-title="Tourist Site"
+      data-desc="A static & dynamic tourist portal with galleries and maps."
+      data-link="https://github.com/MaherMox/Tourist-site">Details</button>
+    
+    <!-- زر اللايف لينك -->
+    <a href="https://mahermox.github.io/Tourist-site/" target="_blank"
+      class="px-3 py-2 rounded-full text-sm"
+      style="background:var(--accent);color:white">Live Demo</a>
+
+    <a href="https://github.com/MaherMox/Tourist-site" target="_blank"
+      class="px-3 py-2 rounded-full text-sm"
+      style="background:var(--accent);color:white">View Repo</a>
+  </div>
+</div>
+</article>
+
+  </section
+
+
+  <!-- Modal (hidden) -->
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center z-50">
+    <div class="absolute inset-0 modal-backdrop" aria-hidden></div>
+    <div class="relative max-w-2xl w-full p-6 glass rounded-2xl z-50" role="dialog">
+      <button id="modalClose" class="absolute right-4 top-4">✕</button>
+      <h3 id="modalTitle" class="text-xl font-semibold">Project Title</h3>
+      <p id="modalDesc" class="text-slate-300 mt-3">Project description goes here.</p>
+      <div class="mt-4 flex gap-3">
+        <a id="modalRepo" href="#" target="_blank" class="px-4 py-2 rounded-full" style="background:var(--accent);color:white">Open Repo</a>
+      </div>
+    </div>
+  </div>
+
+<!-- Contact -->
+<section id="contact" class="pt-8 pb-20">
+  <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+    <div class="glass p-8 rounded-2xl">
+      <h2 class="font-heading text-2xl">Contact Me</h2>
+      <p class="mt-2 text-slate-300">Interested in collaborating? Send a message — I'll reply as soon as I can.</p>
+      <!-- مهم: خلي action تاع الفورم على لينك Getform -->
+      <form id="contactForm" action="https://getform.io/f/adrdyeqa" method="POST" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4" data-netlify-recaptcha="true">
+        <input name="name" required placeholder="Your name" class="p-3 rounded-md bg-transparent border border-white/6" />
+        <input name="email" type="email" required placeholder="Email" class="p-3 rounded-md bg-transparent border border-white/6" />
+        <input name="subject" placeholder="Subject" class="p-3 rounded-md bg-transparent border border-white/6 md:col-span-2" />
+        <textarea name="message" rows="5" required placeholder="Message" class="p-3 rounded-md bg-transparent border border-white/6 md:col-span-2"></textarea>
+        
+
+
+      <!-- social circle buttons -->
+      <div class="mt-6 flex gap-3">
+        <a href="https://www.linkedin.com/in/mohamed-maher-2a7b05370" target="_blank" class="w-12 h-12 rounded-full flex items-center justify-center glass hover:scale-105 transition">in</a>
+        <a href="https://github.com/MaherMox" target="_blank" class="w-12 h-12 rounded-full flex items-center justify-center glass hover:scale-105 transition">GH</a>
+        <a href="mailto:mohamed.maher.linkedin@gmail.com" class="w-12 h-12 rounded-full flex items-center justify-center glass hover:scale-105 transition">✉️</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-slate-400">
+    <div class="max-w-6xl mx-auto px-6">© Mohamed Maher — Built with care ✨</div>
+  </footer>
+
+  <!-- Scripts: AOS, theme toggle, modal, cursor, parallax -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:800,once:true,easing:'ease-out-cubic'});
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    themeToggle.addEventListener('click',()=>{
+      const isDark = document.body.getAttribute('data-theme')==='dark';
+      if(isDark){document.body.setAttribute('data-theme','light');}else{document.body.setAttribute('data-theme','dark');}
+    });
+
+    // Modal
+    document.querySelectorAll('.open-modal').forEach(btn=>{
+      btn.addEventListener('click',e=>{
+        const title = btn.dataset.title; const desc = btn.dataset.desc; const link = btn.dataset.link;
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalDesc').textContent = desc;
+        document.getElementById('modalRepo').href = link;
+        document.getElementById('modal').classList.remove('hidden');
+        document.getElementById('modal').classList.add('flex');
+      })
+    });
+    document.getElementById('modalClose').addEventListener('click',()=>{document.getElementById('modal').classList.add('hidden');document.getElementById('modal').classList.remove('flex');});
+
+    // contact form simple validation & micro-interaction
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending...';
+      setTimeout(()=>{btn.textContent='Sent ✓'; form.reset(); setTimeout(()=>btn.textContent='Send Message',1200)},900);
+    });
+
+    // custom cursor & slight parallax
+    const follower = document.getElementById('cursor-follower');
+    const dot = document.getElementById('cursor-dot');
+    let mouseX=0,mouseY=0,fx=0,fy=0;
+    window.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;dot.style.left=mouseX+'px';dot.style.top=mouseY+'px';});
+    function animate(){fx += (mouseX - fx) * 0.12; fy += (mouseY - fy) * 0.12; follower.style.left = fx + 'px'; follower.style.top = fy + 'px'; requestAnimationFrame(animate);} animate();
+
+    // enlarge cursor on interactive elements
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{follower.style.transform='translate(-50%,-50%) scale(1.6)'; follower.style.opacity='1'});
+      el.addEventListener('mouseleave',()=>{follower.style.transform='translate(-50%,-50%) scale(1)'; follower.style.opacity='0.95'});
+    });
+
+    // subtle parallax for float shapes
+    window.addEventListener('mousemove', (e)=>{
+      document.querySelectorAll('.float-shape').forEach((el,i)=>{
+        const speed = (i+1)*0.02; const x = (e.clientX - window.innerWidth/2) * speed; const y = (e.clientY - window.innerHeight/2) * speed;
+        el.style.transform = `translate(${x}px,${y}px)`;
+      })
+    });
+
+    // small accessibility: close modal on ESC
+    window.addEventListener('keydown', (e)=>{if(e.key === 'Escape'){document.getElementById('modal').classList.add('hidden');document.getElementById('modal').classList.remove('flex');}})
+  </script>
+</body>
+</html>
