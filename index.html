@@ -79,12 +79,17 @@
     margin-left: 0 !important;
   }
 }
-* {
-  box-sizing: border-box;
-}
-
-body {
-  overflow-x: hidden;
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  .float-shape {
+    display: none !important;
+  }
+  #cursor-follower,
+  #cursor-dot {
+    display: none !important;
+  }
 }
 
 
@@ -452,6 +457,7 @@ body {
   </script>
 </body>
 </html>
+
 
 
 
