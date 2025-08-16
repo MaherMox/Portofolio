@@ -56,6 +56,21 @@
     /* progress bar */
     .progress-base{height:8px;background:rgba(255,255,255,0.08);border-radius:999px}
     .progress-fill{height:8px;border-radius:999px}
+    /* Gradient animated text */
+.gradient-text {
+  background: linear-gradient(to right,#00aaa7, #7e42a7, #6600c5, #6070fd,#2a46ff, #0099ff, #008ead);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+
   </style>
 </head>
 <body class="text-slate-200 antialiased relative overflow-x-hidden" data-theme="dark">
@@ -74,12 +89,13 @@
 
   <!-- NAV -->
 <nav class="fixed w-full z-40 top-6 left-0 px-6">
-  <div class="max-w-6xl mx-auto flex items-center justify-between">
+  <div class="max-w-6xl mx-auto flex items-center justify-center">
+
     <a href="#hero" class="font-heading text-white text-xl tracking-tight drop-shadow-md">
     
     </a>
 
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-3">
       <a href="#about" class="text-slate-200 hover:text-white transition">About</a>
       <a href="#projects" class="text-slate-200 hover:text-white transition">Projects</a>
       <a href="#certificates" class="text-slate-200 hover:text-white transition">Certificates</a>
@@ -94,8 +110,9 @@
 <header id="hero" class="min-h-screen flex items-center justify-center relative pt-12">
   <div class="max-w-6xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-12">
     <div class="w-full lg:w-6/12 text-center lg:text-left" data-aos="fade-up">
-      <p class="text-sm uppercase text-slate-300 mb-4">Software Engineer • Cyber Security • Computer Science</p>
-      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl leading-tight text-white">WELCOME</h1>
+      <p class="text-sm uppercase text-slate-300 mb-4"></p>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl leading-tight gradient-text">WELCOME</h1>
+
       <p class="mt-6 text-slate-300 max-w-xl">Hi, I'm <strong class="text-white">Mohamed Maher</strong> — I build polished, reliable software and craft secure, user-first experiences. I combine engineering rigor with creative design to ship products people love.</p>
       <div class="mt-8 flex items-center gap-4 justify-center lg:justify-start">
         <a href="#projects" class="inline-flex items-center gap-3 px-5 py-3 rounded-full shadow-lg glass hover:scale-[1.02] transition">View Projects →</a>
@@ -188,7 +205,7 @@
     </div>
   </section>
 
-  <!-- Certificates 
+  <!-- Certificates -->
   <section id="certificates" class="pt-6 pb-6">
     <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
       <h2 class="font-heading text-2xl mb-6">Certificates</h2>
@@ -223,7 +240,7 @@
       </div>
     </div>
   </section>
-  -->
+
 
   <!-- Divider SVG -->
   <svg class="divider" viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.02)"/></svg>
@@ -335,13 +352,8 @@
         <input name="email" type="email" required placeholder="Email" class="p-3 rounded-md bg-transparent border border-white/6" />
         <input name="subject" placeholder="Subject" class="p-3 rounded-md bg-transparent border border-white/6 md:col-span-2" />
         <textarea name="message" rows="5" required placeholder="Message" class="p-3 rounded-md bg-transparent border border-white/6 md:col-span-2"></textarea>
+        
 
-        <div class="md:col-span-2">
-          <button type="submit" class="px-4 py-2 rounded-full" style="background:var(--accent);color:white">
-            Send Message
-          </button>
-        </div>
-      </form>
 
       <!-- social circle buttons -->
       <div class="mt-6 flex gap-3">
@@ -355,11 +367,12 @@
 
 
 
+  <!-- FOOTER 
+<footer class="py-8 text-center text-slate-400 bg-black">
 
-  <!-- FOOTER -->
-  <footer class="py-8 text-center text-slate-400">
+
     <div class="max-w-6xl mx-auto px-6">© Mohamed Maher — Built with care ✨</div>
-  </footer>
+  </footer> -->
 
   <!-- Scripts: AOS, theme toggle, modal, cursor, parallax -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -422,4 +435,3 @@
   </script>
 </body>
 </html>
-
