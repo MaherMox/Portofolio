@@ -70,9 +70,16 @@
     background-position: 200%;
   }
 }
-body {
-  overflow-x: hidden;
+@media (max-width: 640px) {
+  body {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  * {
+    margin-left: 0 !important;
+  }
 }
+
 
   </style>
 </head>
@@ -438,4 +445,5 @@ body {
   </script>
 </body>
 </html>
+
 
