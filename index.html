@@ -79,18 +79,6 @@
     margin-left: 0 !important;
   }
 }
-@media (max-width: 600px) {
-  body {
-    overflow-x: hidden !important;
-  }
-  .float-shape {
-    display: none !important;
-  }
-  #cursor-follower,
-  #cursor-dot {
-    display: none !important;
-  }
-}
 
 
   </style>
@@ -268,7 +256,9 @@
   <svg class="divider" viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.02)"/></svg>
 
   <!-- PROJECTS -->
-  <section id="projects" class="pt-8 pb-16">
+  <section id="projects" class="pt-8 pb-16" style="background:#0c142a">
+
+
     <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
       <div class="flex items-center justify-between">
         <h2 class="font-heading text-2xl">Selected Projects</h2>
@@ -363,18 +353,28 @@
   </div>
 
 <!-- Contact -->
-<section id="contact" class="pt-8 pb-20">
+<section id="contact" class="pt-8 pb-20" style="background:#0c142a">
+
+
   <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
     <div class="glass p-8 rounded-2xl">
       <h2 class="font-heading text-2xl">Contact Me</h2>
       <p class="mt-2 text-slate-300">Interested in collaborating? Send a message — I'll reply as soon as I can.</p>
+      
+
       <!-- مهم: خلي action تاع الفورم على لينك Getform -->
       <form id="contactForm" action="https://getform.io/f/adrdyeqa" method="POST" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4" data-netlify-recaptcha="true">
         <input name="name" required placeholder="Your name" class="p-3 rounded-md bg-transparent border border-white/6" />
         <input name="email" type="email" required placeholder="Email" class="p-3 rounded-md bg-transparent border border-white/6" />
         <input name="subject" placeholder="Subject" class="p-3 rounded-md bg-transparent border border-white/6 md:col-span-2" />
         <textarea name="message" rows="5" required placeholder="Message" class="p-3 rounded-md bg-transparent border border-white/6 md:col-span-2"></textarea>
-        
+        <button type="submit"
+        class="px-4 py-2 text-sm rounded-full md:col-span-2 glass hover:scale-[1.02] transition">
+        Send
+        </button>
+
+
+
 
 
       <!-- social circle buttons -->
@@ -457,7 +457,6 @@
   </script>
 </body>
 </html>
-
 
 
 
